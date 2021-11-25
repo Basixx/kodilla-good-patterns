@@ -16,7 +16,7 @@ public class GoodPatterns {
         OrderRequest request = productOrderRetriever.retrieve();
 
         OrderProcessor orderProcessor = new OrderProcessor(new ProductOrderRepository(),
-                new ProductOrderService(), new UserInformation());
+                new ProductOrderService(new ProductOrderRepository()), new UserInformation());
         orderProcessor.process(request);
     }
 }

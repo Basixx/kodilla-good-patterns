@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges.two;
 
 import com.kodilla.good.patterns.challenges.two.auxiliary.OrderRetriever;
-
 import java.time.LocalDateTime;
 
 public class ProductOrderRetriever implements OrderRetriever {
