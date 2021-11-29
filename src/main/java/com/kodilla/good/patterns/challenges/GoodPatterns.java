@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
 import com.kodilla.good.patterns.challenges.four.Airport;
-import com.kodilla.good.patterns.challenges.four.Flight;
 import com.kodilla.good.patterns.challenges.four.FlightFinder;
 import com.kodilla.good.patterns.challenges.one.MovieStore;
 import com.kodilla.good.patterns.challenges.three.FoodRequest;
@@ -13,7 +12,6 @@ import com.kodilla.good.patterns.challenges.two.*;
 
 import java.util.Arrays;
 import java.util.List;
-
 
 public class GoodPatterns {
     public static void main(String[] args) {

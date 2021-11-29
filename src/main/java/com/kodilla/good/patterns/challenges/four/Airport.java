@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges.four;
 
-import java.util.Objects;
-
 public class Airport {
     private String City;
     private String Country;

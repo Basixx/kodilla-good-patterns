@@ -28,21 +28,38 @@ public class Flight {
 
     @Override
     public String toString() {
-        String result;
-        result = "Flight from: " + departure.getCity() + " - " +departure.getCountry() +  " to: "
+        String result = "Flight from: " + departure.getCity() + " - " +departure.getCountry() +  " to: "
                 + arrival.getCity() + " - " + arrival.getCountry();
 
         if (transfer == null){
             result += ", no stopovers.";
         } else {
             result += ", stopovers in: "+ transfer.get(0).getCity() + " - " +  transfer.get(0).getCountry();
-            int i=1;
-            while (i<transfer.size()){
+            for (int i=1; i<transfer.size(); i++){
                 result += ", " + transfer.get(i).getCity() + " - " + transfer.get(i).getCountry();
-                i++;
             }
             result +=".";
         }
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Flight)) return false;
+
+        Flight flight = (Flight) o;
+
+        if (departure != null ? !departure.equals(flight.departure) : flight.departure != null) return false;
+        if (arrival != null ? !arrival.equals(flight.arrival) : flight.arrival != null) return false;
+        return transfer != null ? transfer.equals(flight.transfer) : flight.transfer == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = departure != null ? departure.hashCode() : 0;
+        result = 31 * result + (arrival != null ? arrival.hashCode() : 0);
+        result = 31 * result + (transfer != null ? transfer.hashCode() : 0);
         return result;
     }
 }
